@@ -1,7 +1,7 @@
-import { vehicleHelper } from '../helpers/vehicle-model-helper'
+import { VehicleHelper } from '../helpers/vehicle-model-helper'
 
 export class VehicleModel {
-  constructor (private readonly vechicle: vehicleHelper) {}
+  constructor (private readonly vechicle: VehicleHelper) {}
 
   getName (): string {
     return this.vechicle.name
