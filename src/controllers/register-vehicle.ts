@@ -1,4 +1,5 @@
 import { HttpRequest, HttpResponse } from '../interface/http-interface'
+import { MissingFormalParameter } from '../errors/client-error'
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 export class RegisterVehicle {
   handle (httpRequests: HttpRequest): HttpResponse {
@@ -7,7 +8,7 @@ export class RegisterVehicle {
       if (!httpRequests.body[props]) {
         return {
           statusCode: 400,
-          body: new Error(`error in the: ${props}`)
+          body: new MissingFormalParameter(`${props}`)
         }
       }
     }
