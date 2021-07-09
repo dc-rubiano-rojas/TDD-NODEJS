@@ -1,13 +1,17 @@
 import { FoodHelper } from '../helpers/food-model-helper'
 
 export class FoodModel {
-  constructor (private readonly food: FoodHelper) {}
+  constructor (private readonly foodHelper: FoodHelper) {}
 
-  getName (): string { return this.food.name }
+  getName (): string { return this.foodHelper.name }
 
-  getDescription (): string { return this.food.description }
+  getDescription (): string { return this.foodHelper.description }
 
-  getPrice (): number { return this.food.price }
+  getPrice (): number { return this.foodHelper.price }
 
-  getinventory (): number { return this.food.inventory }
+  getinventory (): number { return this.foodHelper.inventory }
+
+  getFood (): any {
+    return Object.assign(this, this.foodHelper)
+  }
 }
